@@ -4,5 +4,12 @@
   "lang": "pt-BR",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#c5a0dc"
+  "theme_color": "#c5a0dc",
+  "icons": [
+    {
+      "src": "cat.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ]
 }
