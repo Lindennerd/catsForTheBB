@@ -1,0 +1,8 @@
+{
+  "name": "Cats For The Baby",
+  "short_name": "Cats For The Baby",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#c5a0dc"
+}
