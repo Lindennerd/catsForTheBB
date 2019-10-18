@@ -1,28 +1,25 @@
-async function onLoad() {
-	let gacto = await getGacto();
-	showGacto(gacto);
-}
-
 async function anotherGacto() {
-	let gacto = await getGacto();
+	const gacto = await getGacto();
 	showGacto(gacto);
 }
 
 async function getGacto() {
-	let spinner = document.querySelector('#cover-spin');
-	spinner.style.display = 'block';
+	loading(true);
 
-	let urlDosGactos = 'https://api.thecatapi.com/v1/images/search';
-	let response = await fetch(urlDosGactos);
-    let cat = await response.json();
+	const urlDosGactos = 'https://api.thecatapi.com/v1/images/search';
+	const response = await fetch(urlDosGactos);
+    const cat = await response.json();
 
     return cat[0];
 }
 
 function showGacto(gacto) {
-	let gactoEl = document.querySelector('#gacto');
+	const gactoEl = document.querySelector('#gacto');
 	gactoEl.src = gacto.url;
-	
-	let spinner = document.querySelector('#cover-spin');
-	spinner.style.display = 'none';
+	loading(false);
+}
+
+function loading(isLoading) {
+	const spinner = document.querySelector('#cover-spin');
+	spinner.style.display = isLoading ? 'block' : 'none';
 }
